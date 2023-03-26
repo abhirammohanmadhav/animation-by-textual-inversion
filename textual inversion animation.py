@@ -1,5 +1,8 @@
 import torch
 from transformers import GPT2Tokenizer, GPT2LMHeadModel
+import cv2
+import numpy as np
+import subprocess
 
 tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
 model = GPT2LMHeadModel.from_pretrained("gpt2", pad_token_id=tokenizer.eos_token_id)
@@ -30,9 +33,7 @@ for i in range(1, 20):
 
 print(intermediate_prompts)
 
-import cv2
-import numpy as np
-import subprocess
+
 
 # Set up OpenCV video writer
 fourcc = cv2.VideoWriter_fourcc(*"mp4v")
